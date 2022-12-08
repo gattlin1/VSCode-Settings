@@ -1,0 +1,306 @@
+{
+  // Editor
+  "editor.minimap.enabled": false,
+  "editor.fontFamily": "Source Code Pro for Powerline, Monaco, Courier New",
+  "editor.fontLigatures": true,
+  "editor.lineNumbers": "on",
+  "editor.codeLens": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.semanticHighlighting.enabled": false,
+  "prettier.jsxSingleQuote": true,
+  "prettier.singleQuote": true,
+  "files.trimTrailingWhitespace": true,
+  "files.eol": "\r\n",
+  "breadcrumbs.enabled": true,
+  "emmet.triggerExpansionOnTab": true,
+  "files.associations": { "*.scss": "postcss" },
+
+  // Todo Highlight
+  "todohighlight.isEnable": true,
+  "todohighlight.isCaseSensitive": false,
+  "todohighlight.keywords": [
+    {
+      "text": "NOTE:",
+      "backgroundColor": "#68B984",
+      "color": "black"
+    },
+    {
+      "text": "FIXME:",
+      "color": "black"
+    },
+    {
+      "text": "TODO:",
+      "backgroundColor": "#88c0d0",
+      "color": "black"
+    },
+    {
+      "text": "QUESTION:",
+      "backgroundColor": "#FED049",
+      "color": "black"
+    }
+  ],
+  "todohighlight.defaultStyle": {
+    "color": "black",
+    "overviewRulerColor": "black",
+    "cursor": "pointer"
+  },
+
+  // File watcher
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/.hg/store/**": true
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true
+  },
+
+  // File Tree
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+
+  // Theme
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.rulers": [80],
+  "workbench.colorTheme": "Nord Wave",
+  "workbench.colorCustomizations": {
+    "[Nord Wave]": {
+      "editorLineNumber.activeForeground": "#88c0d0",
+      "editorRuler.foreground": "#88c0d0",
+      "panel.border": "#5f6364",
+      "sideBar.border": "#5f6364",
+      "editorCursor.foreground": "#ffffffac"
+    }
+  },
+
+  // Ruby
+  "ruby.useLanguageServer": true,
+  "ruby.lint": {
+    "rubocop": {
+      "useBundler": false,
+      "lint": true
+    },
+    "reek": {
+      "useBundler": true
+    }
+  },
+  "ruby.format": "rubocop",
+  "ruby.rubocop.useServer": true,
+  "ruby.rubocop.executePath": "/Users/gattlinwalker/.rvm/gems/ruby-2.7.6/wrappers/",
+  "ruby.rubocop.onSave": true,
+  "[ruby]": {
+    // "editor.defaultFormatter": "misogi.ruby-rubocop"
+    "editor.defaultFormatter": "LoranKloeze.ruby-rubocop-revived",
+    "editor.rulers": [120]
+  },
+
+  "rubyLsp.enabledFeatures": {
+    "documentHighlights": true,
+    "documentSymbols": true,
+    "foldingRanges": true,
+    "selectionRanges": true,
+    "semanticHighlighting": true,
+    "formatting": true,
+    "diagnostics": true,
+    "codeActions": true
+  },
+  "rubyLsp.rubyVersionManager": "rvm",
+
+  // Typescript
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // Javascript
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+
+  // Git
+  "diffEditor.ignoreTrimWhitespace": false,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.codeLens.authors.enabled": false,
+  "git.path": "/opt/homebrew/bin/git",
+
+  // Vim Settings
+  "vim.foldfix": true,
+  "vim.useSystemClipboard": true,
+  "vim.enableNeovim": false,
+  "vim.neovimUseConfigFile": true,
+  "vim.statusBarColorControl": false,
+  "vim.easymotion": true,
+  "vim.searchHighlightColor": "#808080",
+  "vim.useCtrlKeys": true,
+  "vim.overrideCopy": true,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.duration": 500,
+  "vim.hlsearch": true,
+  "vim.leader": "<space>",
+  "vim.insertModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-j>"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<leader>", "w"],
+      "commands": [":w"]
+    },
+    {
+      "before": [";"],
+      "after": [":"]
+    },
+    {
+      "before": ["<C-h>"],
+      "commands": [":nohlsearch"]
+    },
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      "before": ["L"],
+      "after": ["g", "_"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-j>"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["<C-h>"],
+      "commands": [":nohlsearch<cr>"]
+    },
+    {
+      "before": ["j"],
+      "after": ["g", "j"]
+    },
+    {
+      "before": ["k"],
+      "after": ["g", "k"]
+    },
+    {
+      "before": ["n"],
+      "after": ["n", "z", "z"]
+    },
+    {
+      "before": ["N"],
+      "after": ["N", "z", "z"]
+    },
+    {
+      "before": ["*"],
+      "after": ["*", "z", "z"]
+    },
+    {
+      "before": ["#"],
+      "after": ["#", "z", "z"]
+    },
+    {
+      "before": ["g*"],
+      "after": ["g*", "z", "z"]
+    },
+    {
+      "before": ["<leader>", "<leader>"],
+      "commands": [
+        {
+          "command": "workbench.action.openPreviousEditorFromHistory"
+        },
+        {
+          "command": "workbench.action.acceptSelectedQuickOpenItem"
+        }
+      ]
+    },
+    {
+      "before": ["c", "L"],
+      "after": ["c", "g", "_"]
+    },
+    {
+      "before": ["c", "H"],
+      "after": ["c", "^"]
+    },
+    {
+      "before": ["y", "L"],
+      "after": ["y", "g", "_"]
+    },
+    {
+      "before": ["y", "H"],
+      "after": ["y", "^"]
+    },
+    {
+      "before": ["<C-u>"],
+      "after": ["<C-u>", "z", "z"]
+    },
+    {
+      "before": ["<C-d>"],
+      "after": ["<C-d>", "z", "z"]
+    },
+    {
+      "before": ["J"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    {
+      "before": ["<C-b>"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["<C-h>"],
+      "commands": [":nohlsearch<cr>"]
+    },
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      "before": ["L"],
+      "after": ["g", "_"]
+    },
+    {
+      "before": ["J"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-j>"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["<C-h>"],
+      "commands": [":nohlsearch<cr>"]
+    },
+    {
+      "before": ["p"],
+      "after": ["p", "g", "v", "y"]
+    }
+  ],
+  "vim.commandLineModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-j>"],
+      "after": ["<C-c>"]
+    }
+  ],
+  "workbench.sideBar.location": "right",
+  "security.workspace.trust.untrustedFiles": "newWindow",
+  "workbench.editorAssociations": {
+    "*.xlsx": "default"
+  }
+}
