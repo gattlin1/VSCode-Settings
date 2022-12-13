@@ -1,7 +1,10 @@
 {
+  // VS Code
+  "security.workspace.trust.untrustedFiles": "newWindow",
+
   // Editor
   "editor.minimap.enabled": false,
-  "editor.fontFamily": "Source Code Pro for Powerline, Monaco, Courier New",
+  "editor.fontFamily": "Fira Mono for Powerline, Monaco, Courier New",
   "editor.fontLigatures": true,
   "editor.lineNumbers": "on",
   "editor.codeLens": true,
@@ -15,6 +18,7 @@
   "breadcrumbs.enabled": true,
   "emmet.triggerExpansionOnTab": true,
   "files.associations": { "*.scss": "postcss" },
+  "workbench.sideBar.location": "right",
 
   // Todo Highlight
   "todohighlight.isEnable": true,
@@ -75,7 +79,8 @@
       "editorRuler.foreground": "#88c0d0",
       "panel.border": "#5f6364",
       "sideBar.border": "#5f6364",
-      "editorCursor.foreground": "#ffffffac"
+      "editorCursor.foreground": "#ffffffac",
+      "statusBar.foreground": "#88c0d0"
     }
   },
 
@@ -95,7 +100,6 @@
   "ruby.rubocop.executePath": "/Users/gattlinwalker/.rvm/gems/ruby-2.7.6/wrappers/",
   "ruby.rubocop.onSave": true,
   "[ruby]": {
-    // "editor.defaultFormatter": "misogi.ruby-rubocop"
     "editor.defaultFormatter": "LoranKloeze.ruby-rubocop-revived",
     "editor.rulers": [120]
   },
@@ -151,18 +155,6 @@
   ],
   "vim.normalModeKeyBindings": [
     {
-      "before": ["<leader>", "w"],
-      "commands": [":w"]
-    },
-    {
-      "before": [";"],
-      "after": [":"]
-    },
-    {
-      "before": ["<C-h>"],
-      "commands": [":nohlsearch"]
-    },
-    {
       "before": ["H"],
       "after": ["^"]
     },
@@ -173,12 +165,20 @@
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
+      "before": ["<leader>", "w"],
+      "commands": [":w"]
+    },
+    {
+      "before": [";"],
+      "after": [":"]
+    },
+    {
       "before": ["<C-j>"],
       "after": ["<Esc>"]
     },
     {
       "before": ["<C-h>"],
-      "commands": [":nohlsearch<cr>"]
+      "commands": [":nohlsearch"]
     },
     {
       "before": ["j"],
@@ -254,12 +254,24 @@
     {
       "before": ["<C-b>"],
       "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["<C-t>"],
+      "commands": ["bookmarks.toggle"]
+    },
+    {
+      "before": ["<C-n>"],
+      "commands": ["bookmarks.jumpToNext"]
+    },
+    {
+      "before": ["<C-m>"],
+      "commands": ["bookmarks.jumpToPrevious"]
     }
   ],
   "vim.visualModeKeyBindings": [
     {
       "before": ["<C-h>"],
-      "commands": [":nohlsearch<cr>"]
+      "commands": [":nohlsearch"]
     },
     {
       "before": ["H"],
@@ -285,7 +297,7 @@
     },
     {
       "before": ["<C-h>"],
-      "commands": [":nohlsearch<cr>"]
+      "commands": [":nohlsearch"]
     },
     {
       "before": ["p"],
@@ -297,10 +309,5 @@
       "before": ["<C-j>"],
       "after": ["<C-c>"]
     }
-  ],
-  "workbench.sideBar.location": "right",
-  "security.workspace.trust.untrustedFiles": "newWindow",
-  "workbench.editorAssociations": {
-    "*.xlsx": "default"
-  }
+  ]
 }
