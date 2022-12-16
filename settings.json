@@ -86,24 +86,19 @@
 
   // Ruby
   "ruby.useLanguageServer": true,
+  "ruby.format": "rubocop",
   "ruby.lint": {
     "rubocop": {
-      "useBundler": false,
-      "lint": true
-    },
-    "reek": {
-      "useBundler": true
+      "useBundler": true,
+      "command": "/usr/local/bin/rubocop-daemon-wrapper/rubocop"
     }
   },
-  "ruby.format": "rubocop",
-  "ruby.rubocop.useServer": true,
-  "ruby.rubocop.executePath": "/Users/gattlinwalker/.rvm/gems/ruby-2.7.6/wrappers/",
-  "ruby.rubocop.onSave": true,
   "[ruby]": {
-    "editor.defaultFormatter": "LoranKloeze.ruby-rubocop-revived",
+    // Uses https://github.com/fohte/rubocop-daemon#more-speed to actuall format fast
+    "editor.defaultFormatter": "rebornix.ruby",
+    "editor.formatOnSave": true,
     "editor.rulers": [120]
   },
-
   "rubyLsp.enabledFeatures": {
     "documentHighlights": true,
     "documentSymbols": true,
@@ -266,6 +261,14 @@
     {
       "before": ["<C-m>"],
       "commands": ["bookmarks.jumpToPrevious"]
+    },
+    {
+      "before": ["u"],
+      "commands": ["undo"]
+    },
+    {
+      "before": ["<C-r>"],
+      "commands": ["redo"]
     }
   ],
   "vim.visualModeKeyBindings": [
@@ -309,5 +312,9 @@
       "before": ["<C-j>"],
       "after": ["<C-c>"]
     }
-  ]
+  ],
+  "material-icon-theme.folders.color": "#90a4ae",
+  "material-icon-theme.folders.theme": "specific",
+  "material-icon-theme.hidesExplorerArrows": true,
+  "material-icon-theme.saturation": 1
 }
