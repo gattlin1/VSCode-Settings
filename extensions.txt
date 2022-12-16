@@ -6,6 +6,7 @@ dbaeumer.vscode-eslint
 dnlytras.nord-wave
 eamodio.gitlens
 esbenp.prettier-vscode
+gurgeous.bust-a-gem
 hashicorp.terraform
 kaiwood.endwise
 mathiasfrohlich.Kotlin
