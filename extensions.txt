@@ -4,12 +4,10 @@ castwide.solargraph
 christian-kohler.path-intellisense
 dbaeumer.vscode-eslint
 dnlytras.nord-wave
-dracula-theme.theme-dracula
 eamodio.gitlens
 esbenp.prettier-vscode
 hashicorp.terraform
 kaiwood.endwise
-LoranKloeze.ruby-rubocop-revived
 mathiasfrohlich.Kotlin
 ms-azuretools.vscode-docker
 ms-python.isort
