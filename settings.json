@@ -80,7 +80,7 @@
       "panel.border": "#5f6364",
       "sideBar.border": "#5f6364",
       "editorCursor.foreground": "#ffffffac",
-      "statusBar.foreground": "#88c0d0"
+      "terminal.tab.activeBorder": "#ffffff00"
     }
   },
 
@@ -316,5 +316,6 @@
   "material-icon-theme.folders.color": "#90a4ae",
   "material-icon-theme.folders.theme": "specific",
   "material-icon-theme.hidesExplorerArrows": true,
-  "material-icon-theme.saturation": 1
+  "material-icon-theme.saturation": 1,
+  "editor.tabSize": 2
 }
