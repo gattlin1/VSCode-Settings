@@ -33,4 +33,5 @@ vscjava.vscode-java-pack
 vscjava.vscode-maven
 vscodevim.vim
 wayou.vscode-todo-highlight
+wheredoesyourmindgo.gruvbox-concoctis
 wingrunr21.vscode-ruby
