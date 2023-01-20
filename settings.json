@@ -11,6 +11,8 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.semanticHighlighting.enabled": false,
+  "editor.tabSize": 2,
+  "editor.rulers": [80],
   "prettier.jsxSingleQuote": true,
   "prettier.singleQuote": true,
   "files.trimTrailingWhitespace": true,
@@ -71,15 +73,20 @@
 
   // Theme
   "workbench.iconTheme": "material-icon-theme",
-  "editor.rulers": [80],
-  "workbench.colorTheme": "Nord Wave",
+  "workbench.colorTheme": "gruvboxConcoctis dark hard",
   "workbench.colorCustomizations": {
+    // Default
+    "editorCursor.foreground": "#ffffffac",
+    "panel.border": "#5f6364",
+    "sideBar.border": "#5f6364",
+    // Gruvbox
+    "[gruvboxConcoctis dark hard]": {
+      "editorRuler.foreground": "#458588"
+    },
+    // Nord Wave
     "[Nord Wave]": {
       "editorLineNumber.activeForeground": "#88c0d0",
       "editorRuler.foreground": "#88c0d0",
-      "panel.border": "#5f6364",
-      "sideBar.border": "#5f6364",
-      "editorCursor.foreground": "#ffffffac",
       "terminal.tab.activeBorder": "#ffffff00"
     }
   },
@@ -95,9 +102,9 @@
   },
   "[ruby]": {
     // Uses https://github.com/fohte/rubocop-daemon#more-speed to actuall format fast
-    "editor.defaultFormatter": "rebornix.ruby",
-    "editor.formatOnSave": true,
     "editor.rulers": [120]
+    // "editor.defaultFormatter": "rebornix.ruby",
+    // "editor.formatOnSave": true
   },
   "rubyLsp.enabledFeatures": {
     "documentHighlights": true,
@@ -313,9 +320,5 @@
       "after": ["<C-c>"]
     }
   ],
-  "material-icon-theme.folders.color": "#90a4ae",
-  "material-icon-theme.folders.theme": "specific",
-  "material-icon-theme.hidesExplorerArrows": true,
-  "material-icon-theme.saturation": 1,
-  "editor.tabSize": 2
+  "material-icon-theme.hidesExplorerArrows": true
 }
