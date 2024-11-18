@@ -1,1 +1,49 @@
-{}
+{
+  "version": "2.0.0",
+  "presentation": {
+    "echo": true,
+    "reveal": "always",
+    "focus": false,
+    "panel": "shared",
+    "showReuseMessage": false,
+    "clear": false
+  },
+  "tasks": [
+    {
+      "label": "Run Ruby Test at Current Line",
+      "type": "shell",
+      "command": "zsh",
+      "args": ["-c", "RUBYOPT=-W0 bundle exec rspec ${file}:${lineNumber}"],
+      "problemMatcher": [],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Run Ruby Test",
+      "type": "shell",
+      "command": "zsh",
+      "args": ["-c", "RUBYOPT=-W0 bundle exec rspec ${file}"],
+      "problemMatcher": [],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Run JS/TS Tests",
+      "type": "shell",
+      "command": "yarn",
+      "args": ["test", "--", "${file}"],
+      "problemMatcher": [],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    }
+  ]
+}

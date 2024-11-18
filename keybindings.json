@@ -79,37 +79,18 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   {
-    "key": "ctrl+w",
-    "command": "workbench.action.closeWindow",
-    "when": "!editorIsOpen && !multipleEditorGroups"
-  },
-  {
     "key": "cmd+w",
     "command": "-workbench.action.closeWindow",
     "when": "!editorIsOpen && !multipleEditorGroups"
-  },
-  {
-    "key": "ctrl+w",
-    "command": "workbench.action.closeActiveEditor"
   },
   {
     "key": "cmd+w",
     "command": "-workbench.action.closeActiveEditor"
   },
   {
-    "key": "ctrl+.",
-    "command": "editor.action.quickFix",
-    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
-  },
-  {
     "key": "cmd+.",
     "command": "-editor.action.quickFix",
     "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+.",
-    "command": "problems.action.showQuickFixes",
-    "when": "problemFocus"
   },
   {
     "key": "cmd+.",
@@ -167,10 +148,6 @@
     "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
   },
   {
-    "key": "ctrl+\\",
-    "command": "workbench.action.splitEditor"
-  },
-  {
     "key": "cmd+\\",
     "command": "-workbench.action.splitEditor"
   },
@@ -183,19 +160,62 @@
     "command": "-workbench.action.toggleSidebarVisibility"
   },
   {
-    "key": "ctrl+]",
-    "command": "workbench.action.focusRightGroup"
+    "key": "cmd+k",
+    "command": "workbench.action.files.saveWithoutFormatting"
   },
   {
-    "key": "cmd+k cmd+right",
-    "command": "-workbench.action.focusRightGroup"
+    "key": "cmd+k s",
+    "command": "-workbench.action.files.saveWithoutFormatting"
   },
   {
-    "key": "ctrl+[",
-    "command": "workbench.action.focusLeftGroup"
+    "key": "alt+tab",
+    "command": "editor.action.inlineSuggest.trigger",
+    "when": "config.github.copilot.inlineSuggest.enable && editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
   },
   {
-    "key": "cmd+k cmd+left",
-    "command": "-workbench.action.focusLeftGroup"
+    "key": "alt+\\",
+    "command": "-editor.action.inlineSuggest.trigger",
+    "when": "config.github.copilot.inlineSuggest.enable && editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "-workbench.action.quickOpenNavigateNextInEditorPicker",
+    "when": "inEditorsPicker && inQuickOpen"
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+    "when": "!activeEditorGroupEmpty"
+  },
+  {
+    "key": "ctrl+,",
+    "command": "workbench.action.previousEditor"
+  },
+  {
+    "key": "ctrl+.",
+    "command": "workbench.action.nextEditor"
+  },
+  {
+    "key": "shift+cmd+f",
+    "command": "-workbench.action.findInFiles"
+  },
+  {
+    "key": "shift+cmd+f",
+    "command": "-workbench.view.search",
+    "when": "workbench.view.search.active && neverMatch =~ /doesNotMatch/"
+  },
+  {
+    "key": "shift+cmd+f",
+    "command": "-workbench.action.terminal.searchWorkspace",
+    "when": "terminalFocus && terminalProcessSupported && terminalTextSelected"
+  },
+  {
+    "key": "cmd+w",
+    "command": "-workbench.action.closeGroup",
+    "when": "activeEditorGroupEmpty && multipleEditorGroups"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.switchWindow"
   }
 ]
