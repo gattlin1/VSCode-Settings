@@ -1,4 +1,9 @@
 {
+  // Block Security Requirements
+  "liveshare.anonymousGuestApproval": "reject",
+  "liveshare.guestApprovalRequired": true,
+  "liveshare.shareExternalFiles": false,
+
   // VS Code
   "security.workspace.trust.untrustedFiles": "newWindow",
 
@@ -90,7 +95,7 @@
   // File Tree
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
-  "workbench.colorTheme": "Everforest Dark",
+  "workbench.colorTheme": "Nord Wave",
   "workbench.colorCustomizations": {
     // Default
     "editorCursor.foreground": "#ffffffac",
