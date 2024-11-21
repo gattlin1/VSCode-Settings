@@ -1,24 +1,51 @@
 {
+  // Block Security Requirements
+  "liveshare.anonymousGuestApproval": "reject",
+  "liveshare.guestApprovalRequired": true,
+  "liveshare.shareExternalFiles": false,
+
   // VS Code
   "security.workspace.trust.untrustedFiles": "newWindow",
 
   // Editor
   "editor.minimap.enabled": false,
-  "editor.fontFamily": "Fira Mono for Powerline, Monaco, Courier New",
+  "editor.fontFamily": "Hack Nerd Font, Monaco, Courier New",
   "editor.fontLigatures": true,
-  "editor.lineNumbers": "on",
+  "editor.lineNumbers": "relative",
   "editor.codeLens": true,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.semanticHighlighting.enabled": false,
+  "editor.tabSize": 2,
+  "editor.rulers": [80],
   "prettier.jsxSingleQuote": true,
   "prettier.singleQuote": true,
   "files.trimTrailingWhitespace": true,
-  "files.eol": "\r\n",
+  "files.eol": "\n",
   "breadcrumbs.enabled": true,
   "emmet.triggerExpansionOnTab": true,
-  "files.associations": { "*.scss": "postcss" },
+  "files.associations": {
+    "*.scss": "postcss",
+    "*.rb": "ruby"
+  },
+  "errorLens.followCursor": "closestProblemMultiline",
   "workbench.sideBar.location": "right",
+  "workbench.tree.enableStickyScroll": true,
+
+  // Peacock
+  "peacock.affectActivityBar": false,
+  "peacock.affectStatusBar": true,
+  "peacock.affectTitleBar": false,
+  "peacock.affectSashHover": false,
+  "peacock.favoriteColors": [
+    { "name": "Blue", "value": "#88c0d0" },
+    { "name": "Green", "value": "#76b852" },
+    { "name": "Sea Green", "value": "#5B9A8B" },
+    { "name": "Red", "value": "#fd5c63" },
+    { "name": "Brown", "value": "#765827" },
+    { "name": "Orange", "value": "#ff9900" },
+    { "name": "Cream", "value": "#FFF5E0" }
+  ],
 
   // Todo Highlight
   "todohighlight.isEnable": true,
@@ -68,48 +95,42 @@
   // File Tree
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
-
-  // Theme
-  "workbench.iconTheme": "material-icon-theme",
-  "editor.rulers": [80],
   "workbench.colorTheme": "Nord Wave",
   "workbench.colorCustomizations": {
+    // Default
+    "editorCursor.foreground": "#ffffffac",
+    "panel.border": "#5f6364",
+    "sideBar.border": "#5f6364",
     "[Nord Wave]": {
       "editorLineNumber.activeForeground": "#88c0d0",
       "editorRuler.foreground": "#88c0d0",
-      "panel.border": "#5f6364",
-      "sideBar.border": "#5f6364",
-      "editorCursor.foreground": "#ffffffac",
       "terminal.tab.activeBorder": "#ffffff00"
+    },
+    "[Everforest Dark]": {
+      "editorLineNumber.activeForeground": "#a7c080",
+      "editorRuler.foreground": "#a7c080",
+      "terminal.tab.activeBorder": "#9aa79d"
     }
   },
 
   // Ruby
-  "ruby.useLanguageServer": true,
-  "ruby.format": "rubocop",
-  "ruby.lint": {
-    "rubocop": {
-      "useBundler": true,
-      "command": "/usr/local/bin/rubocop-daemon-wrapper/rubocop"
-    }
-  },
   "[ruby]": {
-    // Uses https://github.com/fohte/rubocop-daemon#more-speed to actuall format fast
-    "editor.defaultFormatter": "rebornix.ruby",
-    "editor.formatOnSave": true,
-    "editor.rulers": [120]
+    "editor.rulers": [120],
+    "editor.defaultFormatter": "Shopify.ruby-lsp",
+    "editor.formatOnSave": true
   },
-  "rubyLsp.enabledFeatures": {
-    "documentHighlights": true,
-    "documentSymbols": true,
-    "foldingRanges": true,
-    "selectionRanges": true,
-    "semanticHighlighting": true,
-    "formatting": true,
-    "diagnostics": true,
-    "codeActions": true
+  "rubyLsp.formatter": "rubocop",
+  "rubyLsp.rubyVersionManager": {
+    "identifier": "rvm"
   },
-  "rubyLsp.rubyVersionManager": "rvm",
+  "rubyLsp.enableExperimentalFeatures": true,
+  "solargraph.completion": true,
+  "solargraph.definitions": true,
+  "solargraph.diagnostics": true,
+
+  // Java
+  // Kotlin
+  "kotlin.languageServer.enabled": true,
 
   // Typescript
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -131,7 +152,9 @@
   // Vim Settings
   "vim.foldfix": true,
   "vim.useSystemClipboard": true,
-  "vim.enableNeovim": false,
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "/opt/homebrew/bin/nvim",
+  "vim.neovimConfigPath": "~/.config/nvim/init.vim",
   "vim.neovimUseConfigFile": true,
   "vim.statusBarColorControl": false,
   "vim.easymotion": true,
@@ -168,12 +191,8 @@
       "after": [":"]
     },
     {
-      "before": ["<C-j>"],
-      "after": ["<Esc>"]
-    },
-    {
-      "before": ["<C-h>"],
-      "commands": [":nohlsearch"]
+      "before": ["<C-j>"], // doubles as escaping and removing search highlights
+      "commands": [":nohlsearch", "<Esc>"]
     },
     {
       "before": ["j"],
@@ -247,29 +266,103 @@
       "commands": ["editor.action.moveLinesUpAction"]
     },
     {
-      "before": ["<C-b>"],
+      "before": ["<C-b>"], // toggle sidebar
       "commands": ["workbench.action.toggleSidebarVisibility"]
     },
     {
-      "before": ["<C-t>"],
+      "before": ["<leader>", "b", "a"], // add bookmark
       "commands": ["bookmarks.toggle"]
     },
     {
-      "before": ["<C-n>"],
+      "before": ["<leader>", "b", "n"], // jump to next bookmark
       "commands": ["bookmarks.jumpToNext"]
     },
     {
-      "before": ["<C-m>"],
+      "before": ["<leader>", "b", "p"], // jump to previous bookmark
       "commands": ["bookmarks.jumpToPrevious"]
     },
     {
-      "before": ["u"],
+      "before": ["u"], // undo change
       "commands": ["undo"]
     },
     {
-      "before": ["<C-r>"],
+      "before": ["<C-r>"], // redo change
       "commands": ["redo"]
+    },
+    {
+      "before": ["<C-h>"], // move to left split pane
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+
+    {
+      "before": ["<C-l>"], // move to right split pane
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    {
+      "before": ["[", "t"], // find previous error
+      "commands": ["editor.action.marker.prevInFiles"]
+    },
+    {
+      "before": ["]", "t"], // find next error
+      "commands": ["editor.action.marker.nextInFiles"]
+    },
+    {
+      "before": ["<leader>", "p", "s"], // pull up search
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["<leader>", "p", "c"], // copy path
+      "commands": ["workbench.action.files.copyPathOfActiveFile"]
+    },
+    {
+      "before": ["<C-f>"], // quick fix
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": ["<C-w>", "<C-k>"], // kill tab
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["<C-w>", "<C-v>"], // split tab vertival
+      "commands": ["workbench.action.splitEditor"]
+    },
+    {
+      "before": ["<leader>", "t", "r", "l"],
+      "commands": [
+        {
+          "command": "workbench.action.tasks.runTask",
+          "args": "Run Ruby Test at Current Line"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "t", "r"],
+      "commands": [
+        {
+          "command": "workbench.action.tasks.runTask",
+          "args": "Run Ruby Test"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "t", "j"],
+      "commands": [
+        {
+          "command": "workbench.action.tasks.runTask",
+          "args": "Run JS/TS Tests"
+        }
+      ]
     }
+
+    // Handled in keybindings.json since vim doesn't support <C-.> and <C-,>
+    // {
+    //   "before": ["<C-.>"],
+    //   "commands": ["workbench.action.nextEditor"]
+    // },
+    // {
+    //   "before": ["<C-,>"],
+    //   "commands": ["workbench.action.previousEditor"]
+    // }
   ],
   "vim.visualModeKeyBindings": [
     {
@@ -313,9 +406,22 @@
       "after": ["<C-c>"]
     }
   ],
-  "material-icon-theme.folders.color": "#90a4ae",
-  "material-icon-theme.folders.theme": "specific",
   "material-icon-theme.hidesExplorerArrows": true,
-  "material-icon-theme.saturation": 1,
-  "editor.tabSize": 2
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "git.openRepositoryInParentFolders": "always",
+  "gitlens.advanced.messages": {
+    "suppressIntegrationRequestTimedOutWarning": true
+  },
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "terminal.integrated.profiles.osx": {
+    "zsh": {
+      "path": "/bin/zsh",
+      "args": ["-l", "-i"]
+    }
+  }
 }
